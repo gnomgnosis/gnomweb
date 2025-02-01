@@ -7,30 +7,37 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
-  <header class="bg-green-500 text-white py-6 flex items-center justify-center">
-    <img src="gnom500.png" alt="GNOM Token Logo" class="h-16 mr-4" />
-    <div>
-      <h1 class="text-3xl font-bold text-center">GNOM Token</h1>
-      <p class="text-center text-lg">The Meme Token That Grows Like Gnosis!</p>
-    </div>
-  </header>
-
-  <!-- Новый блок для отображения статистики -->
-  <section id="stats" class="bg-white py-6">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-2xl font-bold text-green-500">Token Statistics</h2>
-      <div class="mt-4 flex justify-center space-x-8">
-        <div>
-          <p class="text-xl font-semibold" id="holders-count">Загрузка...</p>
-          <p>Holders</p>
+    <header class="bg-green-500 text-white py-6 flex items-center justify-center space-x-4 px-6">
+        <img src="gnom500.png" alt="GNOM Token Logo" class="h-16" />
+        <div class="text-left">
+          <h1 class="text-3xl font-bold">GNOM Token</h1>
+          <p class="text-lg">The Meme Token That Grows Like Gnosis!</p>
+          <p class="text-lg font-semibold opacity-90">Global Network of Money</p>
         </div>
-        <div>
-          <p class="text-xl font-semibold" id="transfers-count">Загрузка...</p>
-          <p>Transfers</p>
+      </header>
+      
+      
+
+<!-- Новый блок для отображения статистики -->
+<section id="stats" class="bg-gray-100 py-6">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-2xl font-bold text-green-500">Token Statistics</h2>
+      <div class="mt-4 flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+        <!-- Блок для Holders -->
+        <div class="bg-white border border-gray-300 rounded-md px-4 py-3 w-full max-w-xs">
+          <p class="text-xl font-bold text-gray-800" id="holders-count">Загрузка...</p>
+          <p class="text-sm text-gray-600">Holders</p>
+        </div>
+        <!-- Блок для Transfers -->
+        <div class="bg-white border border-gray-300 rounded-md px-4 py-3 w-full max-w-xs">
+          <p class="text-xl font-bold text-gray-800" id="transfers-count">Загрузка...</p>
+          <p class="text-sm text-gray-600">Transfers</p>
         </div>
       </div>
     </div>
   </section>
+  
+  
 
   <!-- Скрипт для загрузки данных из /cron/holders.json -->
   <script>
@@ -58,37 +65,94 @@
         through gamification. Its goal is to advance decentralization and the crypto economy.!
       </p>
     </section>
-
-    <!-- Tokenomics Section -->
-    <section class="my-12 text-center">
-      <h3 class="text-xl font-bold text-green-500 mt-8">Contract Address</h3>
-      <p class="mt-4">
-        Check out our contract on 
-        <a href="https://gnosisscan.io/token/0x2f4eb11627bd3726003eb7040517dd6a9fd05187"
-           class="text-green-500 underline hover:text-green-600 text-lg font-semibold" target="_blank">
-          GnosisScan
-        </a>.
-      </p>
-      <div class="mt-4">
-        <p>Total Supply: <span class="font-semibold">1,000,000,000 GNOM</span></p>
-        <p>Community Allocation: <span class="font-semibold">50%</span></p>
-        <p>Development Fund: <span class="font-semibold">25%</span></p>
-        <p>Marketing: <span class="font-semibold">15%</span></p>
-        <p>Liquidity Pool: <span class="font-semibold">10%</span></p>
+<!-- Tokenomics Section -->
+<section class="my-12 text-center">
+    <h3 class="text-xl font-bold text-green-500 mt-8">Contract Address</h3>
+  
+    <!-- Текстовое поле с адресом контракта, стилизованное с Tailwind CSS -->
+    <div class="mt-4 max-w-lg mx-auto relative">
+      <input
+        type="text"
+        id="contractAddress"
+        value="0x2F4Eb11627bd3726003eB7040517Dd6A9Fd05187"
+        readonly
+        class="cursor-pointer bg-gray-100 border border-gray-300 rounded-md p-2 w-full font-mono text-center focus:outline-none focus:ring-2 focus:ring-green-500"
+        onclick="copyToClipboard(this)"
+        title="Нажмите, чтобы скопировать адрес"
+      />
+      <!-- Дополнительный элемент (иконка), можно оставить или убрать -->
+      <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+        <svg class="h-5 w-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2v-7H3v7a2 2 0 0 0 2 2z">
+          </path>
+        </svg>
       </div>
-    </section>
+    </div>
+  
+    <!-- Ссылки на эксплореры -->
+    <p class="mt-4">
+      Check out our contract on 
+      <a href="https://gnosisscan.io/token/0x2f4eb11627bd3726003eb7040517dd6a9fd05187"
+         class="text-green-500 underline hover:text-green-600 text-lg font-semibold"
+         target="_blank">
+        GnosisScan
+      </a>.
+    </p>
+    <p class="mt-4">
+      Check out our contract on 
+      <a href="https://gnosis.blockscout.com/token/0x2F4Eb11627bd3726003eB7040517Dd6A9Fd05187"
+         class="text-green-500 underline hover:text-green-600 text-lg font-semibold"
+         target="_blank">
+        Gnosis Blockscout
+      </a>.
+    </p>
+  
+    <div class="mt-4">
+      <p>Total Supply: <span class="font-semibold">1,000,000,000 GNOM</span></p>
+      <p>Community Allocation: <span class="font-semibold">50%</span></p>
+      <p>Development Fund: <span class="font-semibold">25%</span></p>
+      <p>Marketing: <span class="font-semibold">15%</span></p>
+      <p>Liquidity Pool: <span class="font-semibold">10%</span></p>
+    </div>
+  </section>
+  
+  <!-- Скрипт для копирования содержимого поля в буфер обмена -->
+  <script>
+    function copyToClipboard(element) {
+      // Если доступен современный Clipboard API, используем его
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(element.value).catch(err => {
+          console.error('Ошибка копирования:', err);
+        });
+      } else {
+        // Фоллбэк для браузеров без поддержки Clipboard API
+        const tempInput = document.createElement("input");
+        tempInput.value = element.value;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        try {
+          document.execCommand("copy");
+        } catch (err) {
+          console.error('Ошибка копирования:', err);
+        }
+        document.body.removeChild(tempInput);
+      }
+    }
+  </script>
+  
+  
 
     <!-- How to Buy Section -->
     <section class="my-12 text-center">
       <h2 class="text-2xl font-bold text-green-500">How to Buy GNOM</h2>
       <p class="mt-4">Follow these simple steps to become part of the GNOM community:</p>
       <ol class="list-decimal list-inside mt-4">
-        <li>Install a crypto wallet (e.g., MetaMask).</li>
-        <li>Buy BNB or ETH on an exchange.</li>
-        <li>Connect your wallet to PancakeSwap or Uniswap.</li>
+        <li>Connect your wallet to SOUSHI.</li>
         <li>Search for GNOM Token and swap!</li>
       </ol>
-      <a href="https://www.sushi.com/gnosis/swap?token0=0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1&amp;token1=0x2F4Eb11627bd3726003eB7040517Dd6A9Fd05187&amp;swapAmount=0.001000196350938276"
+      <a href="https://www.sushi.com/gnosis/swap?token0=0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1&amp;token1=0x2F4Eb11627bd3726003eB7040517Dd6A9Fd05187&amp;swapAmount=1"
          class="mt-6 inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600" target="_blank">
         Buy GNOM Now on SushiSwap
       </a>
