@@ -7,7 +7,7 @@ headers = {"accept": "application/json"}
 response = requests.get(url, headers=headers)
 
 if response.status_code == 200:
-    with open("holders.json", "w", encoding="utf-8") as f:
+    with open("/home/coins/web/gnom.one/public_html/cron/holders.json", "w", encoding="utf-8") as f:
         f.write(response.text)
     print("Ответ успешно сохранён в файл holders.json")
 else:
