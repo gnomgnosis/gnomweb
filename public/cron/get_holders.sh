@@ -1,14 +1,19 @@
-#!/usr/bin/env python3
-import requests
+#!/bin/bash
 
-url = "https://gnosis.blockscout.com/api/v2/tokens/0x2f4eb11627bd3726003eb7040517dd6a9fd05187/counters"
-headers = {"accept": "application/json"}
+# URL API
+URL="https://gnosis.blockscout.com/api/v2/tokens/0x2f4eb11627bd3726003eb7040517dd6a9fd05187/counters"
+# Файл для сохранения результата
+OUTPUT_FILE="/home/coins/web/gnom.one/private/nodeapp/public/cron"
 
-response = requests.get(url, headers=headers)
+# Отправка запроса и сохранение ответа
+response=$(curl -s -w "%{http_code}" -H "accept: application/json" "$URL")
+http_code="${response: -3}" # Последние 3 символа — это код ответа
+json_body="${response:0:${#response}-3}" # Остальная часть — тело JSON
 
-if response.status_code == 200:
-    with open("/home/coins/web/gnom.one/public_html/cron/holders.json", "w", encoding="utf-8") as f:
-        f.write(response.text)
-    print("Ответ успешно сохранён в файл holders.json")
-else:
-    print(f"Ошибка запроса. Код статуса: {response.status_code}")
+# Проверяем HTTP-статус
+if [ "$http_code" -eq 200 ]; then
+    echo "$json_body" > "$OUTPUT_FILE"
+    echo "Ответ успешно сохранён в файл $OUTPUT_FILE"
+else
+    echo "Ошибка запроса. Код статуса: $http_code"
+fi
