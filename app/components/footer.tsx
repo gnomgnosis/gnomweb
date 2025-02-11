@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="bg-gnom-dark-alt text-gnom-light py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Логотип и описание */}
+
           <div>
             <Image src="/img/gnom500green.png" alt="GNOM Logo" width={40} height={40} className="mb-4" />
             <p className="text-sm text-muted-foreground">
@@ -39,7 +39,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Колонки ссылок */}
+
           <div>
             <h4 className="font-semibold text-gnom-green-400">Solutions</h4>
             <ul className="mt-2 space-y-2 text-sm">
