@@ -206,7 +206,7 @@ export default function Token() {
         >
           <p>Support the GNOM ecosystem by adding liquidity to our pool:</p>
           <Button asChild className="mt-4 bg-green-500 hover:bg-green-600">
-            <a href="https://www.sushi.com/gnosis/pool" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.sushi.com/gnosis/pool/v3/0x70dFE62ec10c227A3001f973B0dd51E8aFCf7661/1033" target="_blank" rel="noopener noreferrer">
               Add Liquidity on SushiSwap
             </a>
           </Button>

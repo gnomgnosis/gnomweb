@@ -21,7 +21,7 @@ export default function Footer() {
               <a href="#" className="text-gnom-green-400 hover:text-gnom-green-500 transition">
                 <FaInstagram size={20} />
               </a>
-              <a href="#" className="text-gnom-green-400 hover:text-gnom-green-500 transition">
+              <a href="https://x.com/gnomgnosis" className="text-gnom-green-400 hover:text-gnom-green-500 transition">
                 <FaXTwitter size={20} />
               </a>
               <a href="#" className="text-gnom-green-400 hover:text-gnom-green-500 transition">
@@ -30,10 +30,10 @@ export default function Footer() {
               <a href="#" className="text-gnom-green-400 hover:text-gnom-green-500 transition">
                 <FaYoutube size={20} />
               </a>
-              <a href="#" className="text-gnom-green-400 hover:text-gnom-green-500 transition">
+              <a href="https://t.me/gnomgnosis" className="text-gnom-green-400 hover:text-gnom-green-500 transition">
                 <FaTelegram size={20} />
               </a>
-              <a href="#" className="text-gnom-green-400 hover:text-gnom-green-500 transition">
+              <a href="https://discord.gg/wrJPeeqG" className="text-gnom-green-400 hover:text-gnom-green-500 transition">
                 <FaDiscord size={20} />
               </a>
             </div>
