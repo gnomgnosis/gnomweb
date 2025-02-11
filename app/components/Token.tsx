@@ -183,7 +183,7 @@ export default function Token() {
           </ol>
           <div className="text-center">
             <Button asChild className="mt-4 bg-green-500 hover:bg-green-600">
-              <a href="https://www.sushi.com/gnosis/swap" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.sushi.com/gnosis/swap?token0=NATIVE&token1=0x2F4Eb11627bd3726003eB7040517Dd6A9Fd05187" target="_blank" rel="noopener noreferrer">
                 Buy GNOM Now on SushiSwap
               </a>
             </Button>
