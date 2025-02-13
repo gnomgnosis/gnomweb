@@ -24,7 +24,7 @@ export default function Footer() {
               <a href="https://x.com/gnomgnosis" className="text-gnom-green-400 hover:text-gnom-green-500 transition">
                 <FaXTwitter size={20} />
               </a>
-              <a href="#" className="text-gnom-green-400 hover:text-gnom-green-500 transition">
+              <a href="https://github.com/gnomgnosis" className="text-gnom-green-400 hover:text-gnom-green-500 transition">
                 <FaGithub size={20} />
               </a>
               <a href="#" className="text-gnom-green-400 hover:text-gnom-green-500 transition">
