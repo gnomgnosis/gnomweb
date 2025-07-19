@@ -24,7 +24,7 @@ if (curl_errno($ch)) {
     $data = json_decode($response, true);
 
     // Запись в файл result.json
-    file_put_contents("result.json", json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+    file_put_contents("holders.json", json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
     echo "Данные успешно сохранены в result.json";
 }
